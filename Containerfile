@@ -21,6 +21,6 @@ FROM ubi8/nginx-122
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY --from=build /app/dist/datum_shop /usr/share/nginx/html
+COPY --from=build /app/dist/Angular-openshift-example /usr/share/nginx/html
 
 CMD nginx -g "daemon off;"
