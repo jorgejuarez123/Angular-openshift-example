@@ -347,12 +347,12 @@ export class NavService {
     //   type: 'link',
     // },
     {
-      title: 'Comercio Electrónico',
+      title: 'Datum Shop',
       type: 'sub',
       icon: 'shopping-bag',
       active: false,
       children: [
-        { path: '/ecommerce/product', title: 'Product', type: 'link' },
+        { path: '/ecommerce/product', title: 'Producto', type: 'link' },
         // { path: '/ecommerce/add-product', title: 'Agregar Producto', type: 'link' },
         // {
         //   path: '/ecommerce/product-page',
@@ -375,9 +375,9 @@ export class NavService {
         //   type: 'link',
         // },
         // { path: '/ecommerce/invoice', title: 'Invoice', type: 'link' },
-        { path: '/ecommerce/cart', title: 'Cart', type: 'link' },
+        { path: '/ecommerce/cart', title: 'Carrito', type: 'link' },
         // { path: '/ecommerce/wishlist', title: 'Wishlist', type: 'link' },
-        { path: '/ecommerce/checkout', title: 'Checkout', type: 'link' },
+        { path: '/ecommerce/checkout', title: 'Compra', type: 'link' },
         // { path: '/ecommerce/pricing', title: 'Pricing', type: 'link' },
       ],
     }

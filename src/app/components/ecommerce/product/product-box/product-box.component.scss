@@ -1,3 +1,10 @@
 img {
     height: 200px;
 }
+
+.card-container {
+    height: 380px; /* Altura de ejemplo para el contenedor */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}

@@ -7,30 +7,12 @@
         <img class="img-fluid"   src="assets/images/logo/datum.png" alt=""></a></div>
       <div class="toggle-sidebar" (click)="sidebarToggle()"><i class="status_toggle middle" data-feather="align-center" id="sidebar-toggle"></i>
       </div>
-    </div>
-    <div class="left-menu-header col">
-      <app-search></app-search>
-    </div>  
+    </div> 
     <div class="nav-right col pull-right right-menu p-0">
       <ul class="nav-menus" [class.open]="open">
-      <li class="language-nav" (click)="languageToggle()">
-        <app-languages></app-languages>
-      </li>
-      <li>
-        <app-maximize></app-maximize>
-      </li>
-      <li class="onhover-dropdown">
-        <app-notification></app-notification>
-      </li>
-      <li class="onhover-dropdown">
-        <app-mode></app-mode>
-      </li>
-      <li class="onhover-dropdown">
-        <app-chat></app-chat>
-      </li>
         <li class="onhover-dropdown p-0">
-          <button class="btn btn-primary-light" click="logoutFunc()" type="button"><a [routerLink]="['/auth/login']"><app-feather-icons [icon]="'log-out'"></app-feather-icons>Log
-              out</a></button>
+          <button class="btn btn-primary-light" click="logoutFunc()" type="button"><a [routerLink]="['/auth/login']"><app-feather-icons [icon]="'log-out'"></app-feather-icons>Cerrar
+              Sesión</a></button>
         </li>
       </ul>
     </div>

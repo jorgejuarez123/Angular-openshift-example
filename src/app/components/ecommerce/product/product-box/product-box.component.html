@@ -3,10 +3,12 @@
     <div [class.col-xl-3]="col_xl_3" [class.col-xl-4]="xl_4" [class.col-sm-3]="col_sm_3"
     [class.col-xl-4]="col_xl_4" [class.col-sm-4]="col_sm_4" [class.col-xl-6]="col_xl_6"
     [class.col-sm-6]="col_sm_6" [class.col-xl-12]="col_xl_12" [class.col-xl-2]="col_xl_2" *ngFor="let product of listData">
-      <div class="card" style="min-height: 300px;">
+      <div class="card card-container">
         <div class="product-box">
           <div class="product-img">
-            <img class="img-fluid alinear" src="{{product.imagen}}" alt="">
+            <div class="img-container" style="margin: auto;">
+              <img class="img-fluid alinear" style="display: block; margin: auto;" src="{{product.imagen}}" alt="">
+            </div>
             <div class="product-hover">
               <ul>
                 <li><a (click)="agregarAlCarrito(product)"><i class="icon-shopping-cart"></i></a></li>
@@ -26,7 +28,7 @@
                   <div class="product-box row">
                     <div class="product-img col-lg-6"><img class="img-fluid" src="{{product.imagen}}" alt=""></div>
                     <div class="product-details col-lg-6 text-start"><a href="e-commerce/product-page">
-                        <h4>{{product.nombreProducto}}</h4></a>
+                        <h4>{{formattedName(product.nombreProducto)}}</h4></a>
                       <div class="product-price">$26.00
                         <del>$35.00</del>
                       </div>
@@ -65,7 +67,7 @@
           </div>
           <div class="product-details">
             <a href="ecommerce/product-page">
-              <h4>{{product.nombreProducto}}</h4></a>
+              <h4>{{formattedName(product.nombreProducto)}}</h4></a>
             <p>{{product.descripcion}}</p>
             <div class="product-price">${{product.precio}}
               <del>${{product.precioDescuento}}</del>

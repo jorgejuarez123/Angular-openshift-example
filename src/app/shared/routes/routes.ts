@@ -13,7 +13,7 @@ export const content: Routes = [
     path: 'ecommerce',
     data: {
       title: "E-commerce",
-      breadcrumb: "E-commerce"
+      breadcrumb: "Datum Shop"
     },
     loadChildren: () => import('../../components/ecommerce/ecommerce.module').then(m => m.EcommerceModule),
   },

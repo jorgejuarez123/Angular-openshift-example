@@ -22,8 +22,8 @@ const routes: Routes = [
         path: "product",
         component: ProductComponent,
         data: {
-          title: 'Product',
-          breadcrumb: 'Product',
+          title: 'Producto',
+          breadcrumb: 'Producto',
           animation: [routingAnimation]
         }
       },
