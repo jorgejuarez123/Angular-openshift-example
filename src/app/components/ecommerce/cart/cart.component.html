@@ -4,7 +4,7 @@
      <div class="col-sm-12">
        <div class="card">
          <div class="card-header pb-0">
-           <h5>Cart</h5>
+           <h5>Carrito</h5>
          </div>
          <div class="card-body">
            <div class="row">
@@ -12,7 +12,7 @@
                <table class="table table-bordered">
                  <thead>
                    <tr>
-                     <th>Product</th>
+                     <th>Producto</th>
                      <th>Nombre del Producto</th>
                      <th>Precio</th>
                      <th>Cantidad</th>
@@ -26,7 +26,7 @@
                       <td><img class="img-fluid img-40" src="{{item.imagen}}" alt="#"></td>
                       <td>
                         <div class="product-name"><a href="javascript:void(0)">
-                            <h6>{{item.nombreProducto}}</h6></a></div>
+                            <h6>{{formattedName(item.nombreProducto)}}</h6></a></div>
                       </td>
                       <td>${{item.precio}}</td>
                       <td>
@@ -49,7 +49,7 @@
                    <tr>
                      <td colspan="4">
                        <div class="input-group">
-                         <input class="form-control me-2" type="text" placeholder="Enter coupan code"><a class="btn btn-primary" href="javascript:void(0)">Apply</a>
+                         <input class="form-control me-2" type="text" placeholder="Ingrese Cupón"><a class="btn btn-primary" href="javascript:void(0)">Aplicar</a>
                        </div>
                      </td>
                      <td class="total-amount">

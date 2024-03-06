@@ -18,6 +18,10 @@ export class CartComponent implements OnInit {
     this.products = this.cartService.obtenerProductos();
   }
 
+  formattedName(name: string): string {
+    return name.replace(/_/g, ' ').toLocaleUpperCase();
+  }
+
   eliminar(i: number): void {
     this.cartService.eliminar(i);
   }

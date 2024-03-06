@@ -18,6 +18,10 @@ export class PlaceOrderComponent implements OnInit {
     this.obtenerProductosCarrito();
   }
 
+  formattedName(name: string): string {
+    return name.replace(/_/g, ' ').toLocaleUpperCase();
+  }
+
   obtenerProductosCarrito(): void {
     this.products = this.cartService.obtenerProductos();
   }

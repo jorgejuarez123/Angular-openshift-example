@@ -1,10 +1,11 @@
-import { ChangeDetectorRef, Component, OnInit, Output, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, Output, ViewChild, inject } from '@angular/core';
 import { ProductService } from 'src/app/shared/services/ecommerce/product.service';
 import { Products } from 'src/app/shared/model/product.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductBoxFilterService } from 'src/app/shared/services/ecommerce/product-box-filter.service';
 import { DrProduct } from 'src/app/shared/model/dr-product.model';
 import { DrServiceService } from 'src/app/shared/services/cart/dr-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-box',
@@ -121,9 +122,11 @@ export class ProductBoxComponent implements OnInit {
   public gridOptions: boolean = true;
   public active: boolean = false;
 
+  private readonly ProductService = inject(ProductService);
+  private readonly modalService = inject(NgbModal);
+  private readonly toastrService = inject(ToastrService);
+
   constructor(
-    private ProductService: ProductService,
-    private modalService: NgbModal,
     private ProductBoxFilterService: ProductBoxFilterService,
     private cd: ChangeDetectorRef,
     private drCartService: DrServiceService
@@ -194,7 +197,7 @@ export class ProductBoxComponent implements OnInit {
       const precio = this.aleatorio(10000);
       this.listData.push({
         idProductos: this.listData.length + 1,
-        nombreProducto: this.imagenes[aleatorio].split('.')[0],
+        nombreProducto: this.imagenes[aleatorio].split('.')[0].replace(/_/g, ' ').toLocaleUpperCase(),
         descripcion: this.descripcionesVentas[aleatorio],
         imagen: `${this.dirBase}/${this.imagenes[aleatorio].split('.')[0]}.png`,
         marca: this.marca(this.aleatorio(8)),
@@ -243,6 +246,7 @@ export class ProductBoxComponent implements OnInit {
 
   agregarAlCarrito(product: DrProduct): void {
     this.drCartService.agregar(product);
+    this.toastrService.success('Producto agregado al carrito');
   }
 
   cargaMasiva(): void {
