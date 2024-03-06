@@ -75,6 +75,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+		  "options": {
+            "browserTarget": "datum-shop-app:build",
+            "port": 8080,
+            "host": "0.0.0.0",
+            "disableHostCheck": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "viho-16:build:production"
